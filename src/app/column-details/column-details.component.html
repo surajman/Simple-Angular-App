@@ -1,0 +1,29 @@
+<div>
+  These are the details of "{{name}}" column <br />
+  <ol>
+    <li>
+      Column Name: {{name}}<br />
+    </li>
+    <li>
+      Column Type: {{type}}<br />
+    </li>
+    <li>
+      Required Flag: {{required}}<br />
+    </li>
+    <li>
+      Default Value: {{defaultValue}}<br />
+    </li>
+    <li *ngIf="type === 'STRING'">
+      MinLength: {{getValue(minLength)}}<br />
+    </li>
+    <li *ngIf="type === 'STRING'">
+      MaxLength: {{getValue(maxLength)}}<br />
+    </li>
+    <li *ngIf="type === 'NUMBER'">
+      Min Value: {{getValue(min)}}<br />
+    </li>
+    <li *ngIf="type === 'NUMBER'">
+      Max Value: {{getValue(max)}}<br />
+    </li>
+  </ol>
+</div>

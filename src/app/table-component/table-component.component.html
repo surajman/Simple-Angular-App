@@ -17,7 +17,7 @@
             [style.right]="column.showColumnFilter ? '-57px' : '0'"
             [style.display]="column.showColumnFilter ? 'inline-block' : 'inline'"
           >
-            <div style="cursor: pointer;" (click)="column.showColumnFilter = true">
+            <div style="cursor: pointer;" (click)="column.showColumnFilter = !column.showColumnFilter">
               <i class="fa fa-sort-asc" aria-hidden="true"></i>
               <i class="fa fa-sort-desc" style="position: relative; right: 9px;" aria-hidden="true"></i>
             </div>
@@ -35,15 +35,20 @@
               Sort Asc
               <span style="float: right" >
                 <input style="cursor: pointer;" type="radio" (click)="sortColumn(column.value, 1); column.showColumnFilter=false" [checked]="sortValue === column.value+'_asc'" />
-                <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+                <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
               </span>
             </div>
             <div style="padding-top: 5px">
               Sort Desc
               <span style="float: right">
                 <input style="cursor: pointer;" type="radio" (click)="sortColumn(column.value, -1); column.showColumnFilter=false" [checked]="sortValue === column.value+'_desc'" />
-                <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+                <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
               </span>
+            </div>
+            <div class="print-column-button-container">
+              <button (click)="navigateToCoulmnDetails(column)">
+                Print
+              </button>
             </div>
           </div>
           </div>
@@ -59,7 +64,7 @@
       </td>
       <td class="table-data" *ngFor="let column of columns">
         <span (click)="onColumnClick(row, column)" [class.clickable-column]="!!column.click">
-          {{row[column.value]}}
+          {{row[column.value] || column.defaultValue}}
         </span>
       </td>
     </tr>

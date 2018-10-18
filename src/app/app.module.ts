@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DetailComponent } from './detail/detail.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ColumnDetailsComponent } from './column-details/column-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TableComponentComponent,
     ConfirmationBoxComponent,
     DetailComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    ColumnDetailsComponent
   ],
   imports: [
     BrowserModule,

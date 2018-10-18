@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { TableColumns } from '../../app/table-columns';
 import { EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-component',
@@ -58,7 +59,7 @@ export class TableComponentComponent implements OnInit {
     this.selectedRows = [];
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
@@ -73,6 +74,11 @@ export class TableComponentComponent implements OnInit {
       return 0;
     });
     this.sortValue = `${column}_${sortOrder === 1 ? 'asc' : 'desc'}`;
+  }
+
+  private navigateToCoulmnDetails(column) {
+    // tslint:disable-next-line:max-line-length
+    this.router.navigate([`columnDetails/${column.value}/${column.name}/${column.type}/${column.required}/${column.defaultValue}/${column.minLength}/${column.maxLength}/${column.min}/${column.max}`]);
   }
 
 }
