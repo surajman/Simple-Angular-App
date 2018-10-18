@@ -1,0 +1,47 @@
+.overlay {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.popup-container {
+	position: absolute;
+	z-index: 10000;
+	white-space: nowrap;
+}
+
+.popup-content {
+	position: absolute;
+	padding: 20px;
+	text-align: left;
+	background-color: #f6f7f8;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    left: 80px;
+    top: 14px;
+}
+
+.popup-arrow {
+	position: absolute;
+	z-index: 10001;
+	color: #f6f7f8;
+	transform: scale(2, 1);
+    text-shadow: 0 -4px 3px rgba(0, 0, 0, 0.1);
+    left: 108px;
+}
+
+.popup-actions {
+	padding-top: 15px;
+}
+
+.popup-box {
+    position: relative;
+    min-height: 10px;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}

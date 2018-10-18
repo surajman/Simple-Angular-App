@@ -1,0 +1,67 @@
+<table style="width: 100%">
+  <thead>
+    <tr class="header-row">
+      <th (click)="selectAllClicked()" class="col-checkbox">
+        <i *ngIf="!isAnyRowChecked()" class="fa fa-square-o" aria-hidden="true"></i>
+        <i *ngIf="isAnyRowChecked() && !areAllRowsChecked()" class="fa fa-minus-square-o" aria-hidden="true"></i>
+        <i *ngIf="rows && rows.length && areAllRowsChecked()" class="fa fa-check-square-o" aria-hidden="true"></i>
+      </th>
+      <th *ngFor="let column of columns">
+        <div style="display: inline-block; width: 100%; position: relative;">
+          <div style="display: inline-block;">
+            {{column?.name}}
+          </div>
+          <div
+            style="position: absolute;
+            display: inline-block;"
+            [style.right]="column.showColumnFilter ? '-57px' : '0'"
+            [style.display]="column.showColumnFilter ? 'inline-block' : 'inline'"
+          >
+            <div style="cursor: pointer;" (click)="column.showColumnFilter = true">
+              <i class="fa fa-sort-asc" aria-hidden="true"></i>
+              <i class="fa fa-sort-desc" style="position: relative; right: 9px;" aria-hidden="true"></i>
+            </div>
+            <div *ngIf="column.showColumnFilter"
+              style="position: relative;
+              top: 10px;
+              right: 57px;
+              border: 1px solid;
+              padding: 10px;
+              background-color: #f6f7f8;
+              text-align: left;
+              width: 110px;"
+            >
+            <div>
+              Sort Asc
+              <span style="float: right" >
+                <input style="cursor: pointer;" type="radio" (click)="sortColumn(column.value, 1); column.showColumnFilter=false" [checked]="sortValue === column.value+'_asc'" />
+                <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div style="padding-top: 5px">
+              Sort Desc
+              <span style="float: right">
+                <input style="cursor: pointer;" type="radio" (click)="sortColumn(column.value, -1); column.showColumnFilter=false" [checked]="sortValue === column.value+'_desc'" />
+                <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td (click)="selectRowClicked(row)" class="table-data first-col">
+        <i *ngIf="!row.isChecked" class="fa fa-square-o" aria-hidden="true"></i>
+        <i *ngIf="row.isChecked" class="fa fa-check-square-o" aria-hidden="true"></i>
+      </td>
+      <td class="table-data" *ngFor="let column of columns">
+        <span (click)="onColumnClick(row, column)" [class.clickable-column]="!!column.click">
+          {{row[column.value]}}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+<form [formGroup]="myForm" (ngSubmit)="saveRecord()" class="complete-form">
+  <div class="input-label-container">
+    <label for="name">Name</label>
+    <input type="text" placeholder="Enter Name" id="name" formControlName="name" [autofocus]="true"/>
+  </div>
+  <div class="input-label-container">
+    <label for="age">Age</label>
+    <input type="number" placeholder="Enter Age" id="age" formControlName="age" />
+  </div>
+  <div class="input-label-container">
+    <label for="active">Active</label>
+    <select id="active" formControlName="isActive">
+      <option [value]="true">Yes</option>
+      <option [value]="false">No</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="!myForm.valid">Save user</button>
+</form>

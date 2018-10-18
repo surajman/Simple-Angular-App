@@ -1,0 +1,38 @@
+.complete-form {
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.complete-form button {
+    border: 1px solid #2e10a5;
+    height: 25px;
+    text-transform: uppercase;
+    color: #2e10a5;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.complete-form button:disabled {
+    cursor: not-allowed;
+}
+
+.input-label-container {
+    padding: 10px;
+}
+
+.input-label-container label {
+    display: inline-block;
+    text-align: left;
+    min-width: 50px;
+}
+
+.input-label-container input {
+    margin-left: 10px;
+    padding-left: 5px;
+}
+
+.input-label-container select {
+    margin-left: 10px;
+    padding-left: 5px;
+}

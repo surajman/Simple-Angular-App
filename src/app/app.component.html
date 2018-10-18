@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<!-- <div class="table-header">
+  <div>
+    <span>Search Records</span>
+    <input [autofocus]="true" type="text" [(ngModel)]="textValue" (keyup.Enter)="searchRecords()" />
+  </div>
+  <div *ngIf="selectedRowCount > 0">
+    {{selectedRowCount}} items selected&nbsp;
+    <app-confirmation-box
+      [showPopup]="openConfirmation"
+      (close)="openConfirmation = false"
+    >
+      <app-popup-content-wrapper>
+        <span class="trash-icon" (click)="openConfirmation = true">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </span>
+      </app-popup-content-wrapper>
+      <app-popup-content>
+        Are you Sure you want to delete selected Item(s)?
+      </app-popup-content>
+      <app-popup-actions>
+        <button class="delete-confirmation-button" (click)="alert('deleted')">Yes</button>
+        <button class="cancel-button" (click)="openConfirmation = false">Cancel</button>
+      </app-popup-actions>
+    </app-confirmation-box>
+  </div>
+</div>
+<app-table-component #tableComponent
+  [columns]="tableColumns"
+  [rows]="filteredData"
+  (selectAllEvent)="selectAllClick($event)"
+  (selectRow)="selectRowClicked($event)">
+</app-table-component> -->
+<router-outlet></router-outlet>
+

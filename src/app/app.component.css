@@ -1,0 +1,38 @@
+.table-header {
+    height: 55px;
+    background: #e5f6f0;
+    width: 100%;
+    display: inline-flex;
+}
+
+.table-header > div {
+    padding: 17px 10px;
+}
+
+.table-header > div > input {
+    margin-left: 10px;
+}
+
+.trash-icon {
+    cursor: pointer;
+    color: #b90d0d
+}
+
+.delete-confirmation-button {
+    border: 1px solid #a40c1a;
+    height: 20px;
+    text-transform: uppercase;
+    background-color: inherit;
+    color: #a40c1a;
+    cursor: pointer;
+}
+
+.cancel-button {
+    border: 1px solid #2e10a5;
+    height: 20px;
+    text-transform: uppercase;
+    background-color: inherit;
+    color: #2e10a5;
+    margin-left: 15px;
+    cursor: pointer;
+}

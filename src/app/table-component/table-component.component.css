@@ -1,0 +1,31 @@
+/* table, td {
+    border: 1px solid black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+} */
+
+.header-row {
+    background: #99d3e9;
+    height: 35px;
+}
+
+.col-checkbox {
+    width: 2%;
+}
+
+.table-data {
+    border-bottom: 1px solid black;
+    height: 25px;
+}
+
+.first-col {
+    text-align: center;
+    height: 25px;
+}
+
+.clickable-column {
+	cursor: pointer;
+	color: #3286DB;
+	font-weight: bold;
+}
